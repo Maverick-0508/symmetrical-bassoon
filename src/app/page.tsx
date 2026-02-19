@@ -105,11 +105,21 @@ export default function Home() {
   ]
 
   const socialLinks = [
-    { name: 'Facebook', icon: FaFacebookF, url: '#' },
-    { name: 'Instagram', icon: FaInstagram, url: '#' },
-    { name: 'Twitter', icon: FaTwitter, url: '#' },
-    { name: 'LinkedIn', icon: FaLinkedinIn, url: '#' },
+    { name: 'Facebook', iconName: 'facebook', url: '#' },
+    { name: 'Instagram', iconName: 'instagram', url: '#' },
+    { name: 'Twitter', iconName: 'twitter', url: '#' },
+    { name: 'LinkedIn', iconName: 'linkedin', url: '#' },
   ]
+
+  const renderSocialIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'facebook': return <FaFacebookF />
+      case 'instagram': return <FaInstagram />
+      case 'twitter': return <FaTwitter />
+      case 'linkedin': return <FaLinkedinIn />
+      default: return null
+    }
+  }
 
   const heroRef = useRef(null)
   const productsRef = useRef(null)
@@ -283,19 +293,16 @@ export default function Home() {
             <a href="#contact" className="hover:text-primary-amber transition-colors duration-300">Contact</a>
           </div>
           <div className="flex gap-3">
-            {socialLinks.map((social) => {
-              const IconComponent = social.icon
-              return (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  className="w-9 h-9 rounded-full bg-primary-brown/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-primary-brown hover:text-white flex items-center justify-center text-sm font-bold transition-all hover:scale-110 duration-300"
-                  aria-label={social.name}
-                >
-                  <IconComponent />
-                </a>
-              )
-            })}
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                className="w-9 h-9 rounded-full bg-primary-brown/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-primary-brown hover:text-white flex items-center justify-center text-sm font-bold transition-all hover:scale-110 duration-300"
+                aria-label={social.name}
+              >
+                {renderSocialIcon(social.iconName)}
+              </a>
+            ))}
           </div>
         </nav>
       </header>
@@ -577,19 +584,16 @@ export default function Home() {
               <div className="text-3xl font-bold font-logo text-primary-amber mb-6 tracking-tight">The Milk House</div>
               <p className="text-text-light/80 mb-6 leading-relaxed font-body">Fresh. Real. From Our Farm to Your Table.</p>
               <div className="flex gap-4">
-                {socialLinks.map((social) => {
-                  const IconComponent = social.icon
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      className="w-12 h-12 rounded-full bg-text-light/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-text-light flex items-center justify-center text-lg font-bold transition-all hover:scale-110 duration-300"
-                      aria-label={social.name}
-                    >
-                      <IconComponent />
-                    </a>
-                  )
-                })}
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    className="w-12 h-12 rounded-full bg-text-light/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-text-light flex items-center justify-center text-lg font-bold transition-all hover:scale-110 duration-300"
+                    aria-label={social.name}
+                  >
+                    {renderSocialIcon(social.iconName)}
+                  </a>
+                ))}
               </div>
             </div>
             
