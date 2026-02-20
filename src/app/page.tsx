@@ -106,7 +106,7 @@ export default function Home() {
 
   const socialLinks = [
     { name: 'Facebook', iconName: 'facebook', url: '#' },
-    { name: 'Instagram', iconName: 'instagram', url: '#' },
+    { name: 'Instagram', iconName: 'instagram', url: 'https://www.instagram.com/sunnysidedairy_ke?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
     { name: 'Twitter', iconName: 'twitter', url: '#' },
     { name: 'LinkedIn', iconName: 'linkedin', url: '#' },
   ]
