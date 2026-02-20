@@ -319,7 +319,7 @@ export default function Home() {
         <div className="container mx-auto relative z-10">
           <div className="max-w-5xl">
             <h1 className="hero-title text-6xl md:text-7xl lg:text-8xl font-bold font-header mb-8 leading-tight">
-              <span className="block text-primary-amber text-5xl md:text-6xl lg:text-7xl">Sunny Side</span>
+              <span className="block text-primary-amber text-5xl md:text-6xl lg:text-7xl">Sunnyside</span>
               <span className="block text-text-light text-6xl md:text-7xl lg:text-8xl mt-1">Dairy</span>
             </h1>
             <p className="hero-subtitle text-xl md:text-2xl lg:text-3xl text-text-light/80 mb-12 max-w-2xl leading-relaxed font-body">
@@ -553,7 +553,7 @@ export default function Home() {
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <div className="text-6xl mb-6">📍</div>
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Location</h3>
-              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">Sunny Side Farm<br />Your Town, State</p>
+              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">Sunnyside Farm<br />Your Town, State</p>
             </div>
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <div className="text-6xl mb-6">📞</div>
@@ -625,7 +625,7 @@ export default function Home() {
               <ul className="space-y-3 text-text-light/80 font-body">
                 <li className="flex items-start">
                   <span className="mr-2">📍</span>
-                  <span>Sunny Side Farm<br />Your Town, State</span>
+                  <span>Sunnyside Farm<br />Your Town, State</span>
                 </li>
                 <li>📞 (555) 123-4567</li>
                 <li>✉️ info@sunnysidedairy.com</li>
@@ -634,7 +634,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-text-light/10 pt-10 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-text-light/60 text-sm mb-4 md:mb-0 font-body">© 2026 The Milk House - Sunny Side Dairy. All rights reserved.</p>
+            <p className="text-text-light/60 text-sm mb-4 md:mb-0 font-body">© 2026 The Milk House - Sunnyside Dairy. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="text-text-light/60 text-sm hover:text-primary-amber transition-colors font-body">Privacy Policy</a>
               <a href="#" className="text-text-light/60 text-sm hover:text-primary-amber transition-colors font-body">Terms of Service</a>
