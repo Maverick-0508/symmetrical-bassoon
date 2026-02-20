@@ -553,12 +553,12 @@ export default function Home() {
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <div className="text-6xl mb-6">📍</div>
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Location</h3>
-              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">Sunnyside Farm<br />Your Town, State</p>
+              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">Sunnyside Farm<br />Karura ka Nyungu, Kiambu County</p>
             </div>
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <div className="text-6xl mb-6">📞</div>
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Phone</h3>
-              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">(555) 123-4567</p>
+              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">0727 918796</p>
             </div>
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <div className="text-6xl mb-6">✉️</div>
@@ -625,9 +625,9 @@ export default function Home() {
               <ul className="space-y-3 text-text-light/80 font-body">
                 <li className="flex items-start">
                   <span className="mr-2">📍</span>
-                  <span>Sunnyside Farm<br />Your Town, State</span>
+                  <span>Sunnyside Farm<br />Karura ka Nyungu, Kiambu County</span>
                 </li>
-                <li>📞 (555) 123-4567</li>
+                <li>📞 0727 918796</li>
                 <li>✉️ info@sunnysidedairy.com</li>
               </ul>
             </div>
