@@ -1,6 +1,6 @@
-# The Milk House - Sunny Side Dairy Website
+# The Milk House - Sunnyside Dairy Website
 
-A modern, responsive website for Sunny Side Dairy farm featuring fresh produce, milk, yogurt, and other dairy products.
+A modern, responsive website for Sunnyside Dairy farm featuring fresh produce, milk, yogurt, and other dairy products.
 
 ## Project Overview
 
@@ -149,7 +149,7 @@ npm run lint
 
 ## License
 
-All rights reserved. The Milk House - Sunny Side Dairy © 2026
+All rights reserved. The Milk House - Sunnyside Dairy © 2026
 
 ## Support
 
