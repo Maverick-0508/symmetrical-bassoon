@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from 'react-icons/fa'
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -105,10 +105,11 @@ export default function Home() {
   ]
 
   const socialLinks = [
-    { name: 'Facebook', iconName: 'facebook', url: '#' },
+    { name: 'Facebook', iconName: 'facebook', url: 'https://www.facebook.com/profile.php?id=61555800447073' },
     { name: 'Instagram', iconName: 'instagram', url: 'https://www.instagram.com/sunnysidedairy_ke?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
     { name: 'Twitter', iconName: 'twitter', url: '#' },
     { name: 'LinkedIn', iconName: 'linkedin', url: '#' },
+    { name: 'Tiktok', iconName: 'tiktok', url: 'https://www.tiktok.com/@sunnysidedairy?is_from_webapp=1&sender_device=pc' },
   ]
 
   const renderSocialIcon = (iconName: string) => {
@@ -117,7 +118,7 @@ export default function Home() {
       case 'instagram': return <FaInstagram />
       case 'twitter': return <FaTwitter />
       case 'linkedin': return <FaLinkedinIn />
-      default: return null
+      case 'tiktok': return <FaTiktok />
     }
   }
 
