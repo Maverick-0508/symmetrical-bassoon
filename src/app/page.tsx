@@ -100,19 +100,19 @@ export default function Home() {
   const teamMembers = [
     {
       id: 1,
-      name: 'Samuel Kipchoge',
+      name: 'Joseph Ndichu',
       role: 'Founder & CEO',
-      image: '👨‍🌾',
-    },
-    {
-      id: 2,
-      name: 'Grace Kipchoge',
-      role: 'Head of Operations',
       image: '👩‍💼',
     },
     {
+      id: 2,
+      name: 'Faith Ngethe',
+      role: 'Founder & CEO',
+      image: '',
+    },
+    {
       id: 3,
-      name: 'David Kariuki',
+      name: 'Alex Wasambula',
       role: 'Farm Manager',
       image: '👨‍🌾',
     },
