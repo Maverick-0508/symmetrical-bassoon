@@ -97,6 +97,33 @@ export default function Home() {
     },
   ]
 
+  const teamMembers = [
+    {
+      id: 1,
+      name: 'Samuel Kipchoge',
+      role: 'Founder & CEO',
+      image: '👨‍🌾',
+    },
+    {
+      id: 2,
+      name: 'Grace Kipchoge',
+      role: 'Head of Operations',
+      image: '👩‍💼',
+    },
+    {
+      id: 3,
+      name: 'David Kariuki',
+      role: 'Farm Manager',
+      image: '👨‍🌾',
+    },
+    {
+      id: 4,
+      name: 'Jane Mwangi',
+      role: 'Quality Assurance',
+      image: '👩‍🔬',
+    },
+  ]
+
   const stats = [
     { number: '20+', label: 'Years Experience' },
     { number: '1000+', label: 'Happy Customers' },
@@ -216,6 +243,19 @@ export default function Home() {
       y: 100,
     })
 
+    // Team members animation
+    gsap.from('.team-member-card', {
+      scrollTrigger: {
+        trigger: '.team-grid',
+        start: 'top 75%',
+      },
+      y: 60,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.15,
+      ease: 'power3.out',
+    })
+
     // Testimonials animation
     gsap.from('.testimonial-card', {
       scrollTrigger: {
@@ -282,12 +322,10 @@ export default function Home() {
         <nav className="container mx-auto px-6 py-5 flex justify-between items-center">
           <div className="text-2xl font-bold font-logo gradient-text tracking-tight">The Milk House</div>
           <div className="hidden md:flex gap-10 text-sm font-semibold font-body tracking-wide">
-            <a href="#about" className="hover:text-primary-amber transition-colors duration-300">About</a>
+            <a href="#about" className="hover:text-primary-amber transition-colors duration-300">About Us</a>
             <a href="#products" className="hover:text-primary-amber transition-colors duration-300">Products</a>
-            <a href="#strengths" className="hover:text-primary-amber transition-colors duration-300">Strengths</a>
-            <a href="#partners" className="hover:text-primary-amber transition-colors duration-300">Partners</a>
-            <a href="#testimonials" className="hover:text-primary-amber transition-colors duration-300">Reviews</a>
-            <a href="#contact" className="hover:text-primary-amber transition-colors duration-300">Contact</a>
+            <a href="#team" className="hover:text-primary-amber transition-colors duration-300">Team</a>
+            <a href="#contact" className="hover:text-primary-amber transition-colors duration-300">Contact Us</a>
           </div>
           <div className="flex gap-3">
             {socialLinks.map((social) => (
@@ -420,6 +458,45 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section id="team" className="relative py-32 px-6 bg-text-light">
+        <div className="container mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="section-title text-6xl md:text-7xl font-bold font-header mb-6 gradient-text">Meet the Team</h2>
+            <p className="text-primary-brown/70 text-xl max-w-2xl mx-auto font-body">
+              The passionate people behind the foundation of Sunnyside Dairy
+            </p>
+          </div>
+
+          <div className="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {teamMembers.map((member) => (
+              <div
+                key={member.id}
+                className="team-member-card group flex flex-col items-center text-center"
+              >
+                {/* Circular Image Container */}
+                <div className="relative mb-6 w-48 h-48">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-amber to-accent-orange p-1">
+                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-lg">
+                      <div className="text-8xl">{member.image}</div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 rounded-full border-4 border-primary-amber/20 group-hover:border-primary-amber/50 transition-colors duration-300"></div>
+                </div>
+
+                {/* Member Info */}
+                <h3 className="text-2xl font-bold font-header text-primary-brown mb-2 group-hover:text-primary-amber transition-colors">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-semibold text-primary-amber uppercase tracking-wide">
+                  {member.role}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -575,11 +652,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative bg-primary-brown border-t border-primary-amber/20 py-20 px-6">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             {/* Brand */}
-            <div className="md:col-span-1">
+            <div>
               <div className="text-3xl font-bold font-logo text-primary-amber mb-6 tracking-tight">The Milk House</div>
-              <p className="text-text-light/80 mb-6 leading-relaxed font-body">Fresh. Real. From Our Farm to Your Table.</p>
+              <p className="text-text-light/80 mb-6 leading-relaxed font-body">Rooted in tradition. Committed to quality.</p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <a
@@ -596,30 +673,19 @@ export default function Home() {
             
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Quick Links</h3>
+              <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Menu</h3>
               <ul className="space-y-3 font-body">
                 <li><a href="#about" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">About Us</a></li>
+                <li><a href="#team" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Team</a></li>
                 <li><a href="#products" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Products</a></li>
-                <li><a href="#strengths" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Our Strengths</a></li>
-                <li><a href="#partners" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Partners</a></li>
-              </ul>
-            </div>
-            
-            {/* Resources */}
-            <div>
-              <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Resources</h3>
-              <ul className="space-y-3 font-body">
-                <li><a href="#testimonials" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Reviews</a></li>
                 <li><a href="#contact" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Contact</a></li>
-                <li><a href="#" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">FAQ</a></li>
-                <li><a href="#" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Blog</a></li>
               </ul>
             </div>
             
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Contact</h3>
-              <ul className="space-y-3 text-text-light/80 font-body">
+              <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Get in Touch</h3>
+              <ul className="space-y-4 text-text-light/80 font-body">
                 <li className="flex items-start">
                   <span className="mr-2">📍</span>
                   <span>Sunnyside Farm<br />Karura ka Nyungu, Kiambu County</span>
@@ -630,12 +696,8 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="border-t border-text-light/10 pt-10 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-text-light/60 text-sm mb-4 md:mb-0 font-body">© 2026 The Milk House - Sunnyside Dairy. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="text-text-light/60 text-sm hover:text-primary-amber transition-colors font-body">Privacy Policy</a>
-              <a href="#" className="text-text-light/60 text-sm hover:text-primary-amber transition-colors font-body">Terms of Service</a>
-            </div>
+          <div className="border-t border-text-light/10 pt-10">
+            <p className="text-text-light/60 text-sm text-center font-body">© 2026 The Milk House - Sunnyside Dairy. All rights reserved.</p>
           </div>
         </div>
       </footer>
