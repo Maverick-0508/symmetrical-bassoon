@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'The Milk House - Sunnyside Dairy',
   description: 'Fresh produce, milk, yogurt, and dairy products from our farm to your table',
-  keywords: 'dairy, milk, yogurt, fresh produce, farm',
+  keywords: 'dairy, milk, yogurt, fresh produce, greens, produce, farm',
   openGraph: {
     title: 'The Milk House - Sunnyside Dairy',
     description: 'Fresh produce, milk, yogurt, and dairy products from our farm to your table',
