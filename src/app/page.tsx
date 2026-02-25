@@ -71,7 +71,7 @@ export default function Home() {
     {
       icon: '🚚',
       title: 'Fast Delivery',
-      description: 'Farm-fresh products delivered directly to your doorstep within 24 hours.',
+      description: 'Farm-fresh products and greens delivered directly to your doorstep within 24 hours.',
     },
   ]
 
