@@ -124,6 +124,57 @@ export default function Home() {
     },
   ]
 
+  const galleryItems = [
+    {
+      id: 1,
+      title: 'Morning Milking',
+      description: 'Fresh milk collected at sunrise every day',
+      icon: '🐄',
+      bg: 'from-primary-amber/20 to-accent-orange/20',
+      size: 'row-span-2',
+    },
+    {
+      id: 2,
+      title: 'Green Pastures',
+      description: 'Our cows roam freely on lush green fields',
+      icon: '🌿',
+      bg: 'from-accent-blue/20 to-primary-amber/10',
+      size: '',
+    },
+    {
+      id: 3,
+      title: 'Organic Harvest',
+      description: 'Hand-picked seasonal produce from our garden',
+      icon: '🥬',
+      bg: 'from-primary-amber/10 to-accent-orange/20',
+      size: '',
+    },
+    {
+      id: 4,
+      title: 'The Farm House',
+      description: 'Our historic farmhouse at the heart of Sunnyside',
+      icon: '🏡',
+      bg: 'from-accent-orange/20 to-primary-amber/20',
+      size: 'col-span-2',
+    },
+    {
+      id: 5,
+      title: 'Artisan Dairy',
+      description: 'Small-batch yogurt and cheese crafted by hand',
+      icon: '🧀',
+      bg: 'from-primary-amber/20 to-accent-blue/10',
+      size: '',
+    },
+    {
+      id: 6,
+      title: 'Happy Hens',
+      description: 'Free-range hens laying golden eggs daily',
+      icon: '🐔',
+      bg: 'from-accent-orange/10 to-primary-amber/20',
+      size: '',
+    },
+  ]
+
   const stats = [
     { number: '20+', label: 'Years Experience' },
     { number: '1000+', label: 'Happy Customers' },
@@ -282,6 +333,19 @@ export default function Home() {
       ease: 'power2.out',
     })
 
+    // Gallery items animation
+    gsap.from('.gallery-item', {
+      scrollTrigger: {
+        trigger: '.gallery-grid',
+        start: 'top 75%',
+      },
+      scale: 0.85,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.1,
+      ease: 'power3.out',
+    })
+
     // Contact cards slide up
     gsap.from('.contact-card', {
       scrollTrigger: {
@@ -324,6 +388,7 @@ export default function Home() {
           <div className="hidden md:flex gap-10 text-sm font-semibold font-body tracking-wide">
             <a href="#about" className="hover:text-primary-amber transition-colors duration-300">About Us</a>
             <a href="#products" className="hover:text-primary-amber transition-colors duration-300">Products</a>
+            <a href="#gallery" className="hover:text-primary-amber transition-colors duration-300">Farm Gallery</a>
             <a href="#team" className="hover:text-primary-amber transition-colors duration-300">Team</a>
             <a href="#contact" className="hover:text-primary-amber transition-colors duration-300">Contact Us</a>
           </div>
@@ -613,6 +678,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Farm Gallery Section */}
+      <section id="gallery" className="relative py-32 px-6 bg-text-light overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-amber/5 via-transparent to-accent-orange/5"></div>
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="section-title text-6xl md:text-7xl font-bold font-header mb-6 gradient-text">Farm Gallery</h2>
+            <p className="text-primary-brown/70 text-xl max-w-2xl mx-auto font-body">
+              A glimpse into our daily life — from sunrise milking to harvest time
+            </p>
+          </div>
+
+          <div className="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(240px,auto)]">
+            {galleryItems.map((item) => (
+              <div
+                key={item.id}
+                className={`gallery-item group relative bg-gradient-to-br ${item.bg} rounded-3xl border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-primary-amber/20 overflow-hidden ${item.size}`}
+              >
+                {/* Decorative blur blob */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-amber/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+
+                <div className="relative z-10 flex flex-col justify-between h-full p-8">
+                  <div className="text-7xl group-hover:scale-110 transition-transform duration-300 select-none" aria-hidden="true">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold font-header text-primary-brown group-hover:text-primary-amber transition-colors mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-primary-brown/70 font-body leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="relative py-32 px-6 bg-text-light">
         <div className="container mx-auto max-w-6xl">
@@ -678,6 +782,7 @@ export default function Home() {
                 <li><a href="#about" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">About Us</a></li>
                 <li><a href="#team" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Team</a></li>
                 <li><a href="#products" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Products</a></li>
+                <li><a href="#gallery" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Farm Gallery</a></li>
                 <li><a href="#contact" className="text-text-light/80 hover:text-primary-amber transition-colors duration-300">Contact</a></li>
               </ul>
             </div>
