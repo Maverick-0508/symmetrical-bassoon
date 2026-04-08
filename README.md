@@ -6,7 +6,7 @@ A modern, responsive website for Sunnyside Dairy farm featuring fresh produce, m
 
 **Brand Name:** The Milk House - Sunny Side Dairy  
 **Domain:** sunnysidedairy.com  
-**Theme Colors:** Sky Blue (#87CEEB) and White  
+**Theme Colors:** Rich Brown (#462e1c), Amber (#c06e1d), and Warm Cream (#f4f1ea)  
 
 ### Features
 
@@ -65,21 +65,19 @@ npm start
 
 ```
 src/
-├── app/
-│   ├── layout.tsx        # Root layout with metadata
-│   ├── page.tsx          # Home page component
-│   ├── globals.css       # Global styles and Tailwind directives
-│   └── page.module.css   # Page-specific styles (optional)
-├── components/           # Reusable React components
-└── lib/                  # Utility functions and helpers
+└── app/
+    ├── layout.tsx        # Root layout with metadata
+    ├── page.tsx          # Home page component
+    └── globals.css       # Global styles and Tailwind directives
 ```
 
 ## Color Palette
 
-- **Sky Blue:** #87CEEB (Primary color)
-- **Sky Blue Light:** #E0F6FF (Background accent)
-- **Dairy White:** #FFFFFF (Background)
-- **Dairy Green:** #2D5016 (Accent for natural elements)
+- **Rich Brown:** #462e1c (Primary text and backgrounds)
+- **Amber:** #c06e1d (Primary accent / interactive elements)
+- **Accent Orange:** #a04e10 (Hover states and highlights)
+- **Accent Blue:** #3b5566 (Secondary accent)
+- **Warm Cream:** #f4f1ea (Light background)
 
 ## Customization
 
