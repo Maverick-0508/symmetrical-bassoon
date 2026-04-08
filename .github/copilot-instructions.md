@@ -1,25 +1,53 @@
-- [x] Verify that the copilot-instructions.md file in the .github directory is created.
+# Copilot Instructions — The Milk House (Sunnyside Dairy)
 
-- [x] Clarify Project Requirements
-	User confirmed: Next.js with React for sunnysidedairy.com
+This repo is a Next.js 16 + TypeScript + Tailwind CSS website for **sunnysidedairy.com**.
 
-- [x] Scaffold the Project
-	Next.js project scaffolded with TypeScript, Tailwind CSS, and App Router in src directory
+## Running the project
 
-- [x] Customize the Project
-	Created custom home page with The Milk House branding, product showcase, testimonials, and contact section
+```bash
+npm install        # install dependencies
+npm run dev        # start development server at http://localhost:3000
+npm run build      # production build
+npm start          # start production server (after build)
+npm run lint       # run ESLint
+```
 
-- [x] Install Required Extensions
-	No extensions needed, project uses built-in tools
+VS Code tasks for `dev`, `build`, and `lint` are defined in `.vscode/tasks.json`.
 
-- [x] Compile the Project
-	Project builds successfully with npm run build
+## Project structure
 
-- [x] Create and Run Task
-	Added .vscode/tasks.json with dev and build tasks
+```
+src/
+└── app/
+    ├── layout.tsx      # Root layout and metadata
+    ├── page.tsx        # Home page (all sections live here)
+    └── globals.css     # Global styles and CSS custom properties
+```
 
-- [ ] Launch the Project
-	Ready to launch - user can run the dev server
+All page content (hero, products, about, testimonials, contact) is in `src/app/page.tsx`.
 
-- [x] Ensure Documentation is Complete
-	README.md created with complete project documentation
+## Styling conventions
+
+- **Tailwind CSS** utility classes are the primary styling approach.
+- CSS custom properties are declared in `globals.css` under `:root`:
+  - `--primary-brown: #462e1c`
+  - `--primary-amber: #c06e1d`
+  - `--accent-orange: #a04e10`
+  - `--accent-blue: #3b5566`
+  - `--text-light: #f4f1ea`
+- Custom Tailwind color tokens (`primary-brown`, `primary-amber`, etc.) mirror these values — see `tailwind.config.ts`.
+- Custom fonts: `Caveat Brush` (logo), `Fredoka` (headings), `Poppins` (body).
+
+## Code conventions
+
+- TypeScript is used throughout; avoid `any` types.
+- App Router (`src/app/`) — no Pages Router.
+- Keep all sections as functions/components within `page.tsx` until a `src/components/` directory is created.
+- Use `'use client'` at the top of `page.tsx` because it relies on React hooks.
+
+## Adding or editing content
+
+- **Products**: edit the `products` array near the top of `src/app/page.tsx`.
+- **Team members**: edit the `teamMembers` array in `src/app/page.tsx`.
+- **Contact details**: update the contact section JSX in `src/app/page.tsx`.
+- **Metadata** (title, description, Open Graph): edit `src/app/layout.tsx`.
