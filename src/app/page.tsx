@@ -1,9 +1,19 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa'
+import {
+  FaFacebookF, FaInstagram, FaTiktok,
+  FaLeaf, FaTrophy, FaHandshake, FaHeart, FaFlask, FaTruck,
+  FaGlobe, FaStore, FaRecycle, FaCheckCircle,
+  FaMapMarkerAlt, FaPhone, FaEnvelope, FaHome,
+  FaBars, FaTimes, FaSeedling,
+} from 'react-icons/fa'
+import {
+  GiCow, GiCheeseWedge, GiCarrot, GiStrawberry, GiWheat,
+  GiMilkCarton, GiFarmTractor, GiChicken, GiMasonJar,
+} from 'react-icons/gi'
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -16,72 +26,72 @@ export default function Home() {
       id: 1,
       name: 'Premium Milk',
       description: 'Pure, fresh milk from our healthy dairy cows',
-      icon: '🥛',
+      icon: <GiMilkCarton className="w-16 h-16" />,
       gradient: 'from-primary-amber to-accent-orange',
     },
     {
       id: 2,
       name: 'Artisan Yogurt',
       description: 'Fresh yogurt crafted in small batches',
-      icon: '🍶',
+      icon: <GiMasonJar className="w-16 h-16" />,
       gradient: 'from-accent-orange to-primary-amber',
     },
     {
       id: 3,
       name: 'Organic Vegetables',
       description: 'Farm-fresh organic produce, picked daily',
-      icon: '🥬',
+      icon: <GiCarrot className="w-16 h-16" />,
       gradient: 'from-accent-blue to-primary-amber',
     },
     {
       id: 4,
       name: 'Fresh Fruits',
       description: 'Sweet and juicy seasonal fruits',
-      icon: '🍎',
+      icon: <GiStrawberry className="w-16 h-16" />,
       gradient: 'from-primary-amber to-accent-blue',
     },
   ]
 
   const strengths = [
     {
-      icon: '🌱',
+      icon: <FaSeedling className="w-12 h-12" />,
       title: 'Sustainable Farming',
       description: 'We practice regenerative agriculture that improves soil health and biodiversity.',
     },
     {
-      icon: '🏆',
+      icon: <FaTrophy className="w-12 h-12" />,
       title: 'Award Winning',
       description: 'Multiple awards for our exceptional quality and dedication to organic farming.',
     },
     {
-      icon: '🤝',
+      icon: <FaHandshake className="w-12 h-12" />,
       title: 'Community First',
       description: 'Supporting local communities and building lasting relationships with our customers.',
     },
     {
-      icon: '💚',
+      icon: <FaHeart className="w-12 h-12" />,
       title: 'Animal Welfare',
       description: 'Our animals are treated with respect and care, living happy and healthy lives.',
     },
     {
-      icon: '🔬',
+      icon: <FaFlask className="w-12 h-12" />,
       title: 'Quality Control',
       description: 'Rigorous testing and quality assurance at every step of production.',
     },
     {
-      icon: '🚚',
+      icon: <FaTruck className="w-12 h-12" />,
       title: 'Fast Delivery',
       description: 'Farm-fresh products and greens delivered directly to your doorstep within 24 hours.',
     },
   ]
 
   const partners = [
-    { name: 'Organic Certified', logo: '🌿' },
-    { name: 'Farm Fresh Alliance', logo: '🚜' },
-    { name: 'Green Earth', logo: '🌍' },
-    { name: 'Local Food Co-op', logo: '🏪' },
-    { name: 'Sustainable Farms', logo: '♻️' },
-    { name: 'Quality Assured', logo: '✓' },
+    { name: 'Organic Certified', logo: <FaLeaf className="w-10 h-10" /> },
+    { name: 'Farm Fresh Alliance', logo: <GiFarmTractor className="w-10 h-10" /> },
+    { name: 'Green Earth', logo: <FaGlobe className="w-10 h-10" /> },
+    { name: 'Local Food Co-op', logo: <FaStore className="w-10 h-10" /> },
+    { name: 'Sustainable Farms', logo: <FaRecycle className="w-10 h-10" /> },
+    { name: 'Quality Assured', logo: <FaCheckCircle className="w-10 h-10" /> },
   ]
 
   const testimonials = [
@@ -102,25 +112,21 @@ export default function Home() {
       id: 1,
       name: 'Joseph Ndichu',
       role: 'Founder & CEO',
-      image: '👩‍💼',
     },
     {
       id: 2,
       name: 'Faith Ngethe',
       role: 'Founder & CEO',
-      image: '',
     },
     {
       id: 3,
       name: 'Alex Wasambula',
       role: 'Farm Manager',
-      image: '👨‍🌾',
     },
     {
       id: 4,
       name: 'Jane Mwangi',
       role: 'Quality Assurance',
-      image: '👩‍🔬',
     },
   ]
 
@@ -129,7 +135,7 @@ export default function Home() {
       id: 1,
       title: 'Morning Milking',
       description: 'Fresh milk collected at sunrise every day',
-      icon: '🐄',
+      icon: <GiCow className="w-16 h-16" />,
       bg: 'from-primary-amber/20 to-accent-orange/20',
       size: 'row-span-2',
     },
@@ -137,7 +143,7 @@ export default function Home() {
       id: 2,
       title: 'Green Pastures',
       description: 'Our cows roam freely on lush green fields',
-      icon: '🌿',
+      icon: <FaLeaf className="w-14 h-14" />,
       bg: 'from-accent-blue/20 to-primary-amber/10',
       size: '',
     },
@@ -145,7 +151,7 @@ export default function Home() {
       id: 3,
       title: 'Organic Harvest',
       description: 'Hand-picked seasonal produce from our garden',
-      icon: '🥬',
+      icon: <GiWheat className="w-14 h-14" />,
       bg: 'from-primary-amber/10 to-accent-orange/20',
       size: '',
     },
@@ -153,7 +159,7 @@ export default function Home() {
       id: 4,
       title: 'The Farm House',
       description: 'Our historic farmhouse at the heart of Sunnyside',
-      icon: '🏡',
+      icon: <FaHome className="w-14 h-14" />,
       bg: 'from-accent-orange/20 to-primary-amber/20',
       size: 'col-span-2',
     },
@@ -161,7 +167,7 @@ export default function Home() {
       id: 5,
       title: 'Artisan Dairy',
       description: 'Small-batch yogurt and cheese crafted by hand',
-      icon: '🧀',
+      icon: <GiCheeseWedge className="w-14 h-14" />,
       bg: 'from-primary-amber/20 to-accent-blue/10',
       size: '',
     },
@@ -169,7 +175,7 @@ export default function Home() {
       id: 6,
       title: 'Happy Hens',
       description: 'Free-range hens laying golden eggs daily',
-      icon: '🐔',
+      icon: <GiChicken className="w-14 h-14" />,
       bg: 'from-accent-orange/10 to-primary-amber/20',
       size: '',
     },
@@ -198,6 +204,7 @@ export default function Home() {
 
   const heroRef = useRef(null)
   const productsRef = useRef(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     // Smooth scroll initialization
@@ -392,11 +399,13 @@ export default function Home() {
             <a href="#team" className="hover:text-primary-amber transition-colors duration-300">Team</a>
             <a href="#contact" className="hover:text-primary-amber transition-colors duration-300">Contact Us</a>
           </div>
-          <div className="flex gap-3">
+          <div className="hidden md:flex gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-primary-brown/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-primary-brown hover:text-white flex items-center justify-center text-sm font-bold transition-all hover:scale-110 duration-300"
                 aria-label={social.name}
               >
@@ -404,7 +413,53 @@ export default function Home() {
               </a>
             ))}
           </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 rounded-lg text-primary-brown hover:text-primary-amber transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+          </button>
         </nav>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-primary-brown/10 shadow-lg">
+            <div className="container mx-auto px-6 py-6 flex flex-col gap-5">
+              {[
+                { href: '#about', label: 'About Us' },
+                { href: '#products', label: 'Products' },
+                { href: '#gallery', label: 'Farm Gallery' },
+                { href: '#team', label: 'Team' },
+                { href: '#contact', label: 'Contact Us' },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-base font-semibold font-body text-primary-brown hover:text-primary-amber transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="flex gap-3 pt-2 border-t border-primary-brown/10">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-primary-brown/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-primary-brown hover:text-white flex items-center justify-center text-sm font-bold transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    {renderSocialIcon(social.iconName)}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -502,22 +557,22 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-text-light rounded-3xl p-8 border border-primary-brown/10 hover:border-primary-amber/50 transition-all transform hover:-translate-y-2 shadow-lg">
-                  <div className="text-5xl mb-4">🌱</div>
+                  <FaSeedling className="w-10 h-10 text-primary-amber mb-4" />
                   <h3 className="text-2xl font-bold font-header mb-3 text-primary-brown">100% Organic</h3>
                   <p className="text-primary-brown/70">Certified organic farming practices</p>
                 </div>
                 <div className="bg-text-light rounded-3xl p-8 border border-primary-brown/10 hover:border-primary-amber/50 transition-all transform hover:-translate-y-2 mt-12 shadow-lg">
-                  <div className="text-5xl mb-4">🐄</div>
+                  <GiCow className="w-10 h-10 text-primary-amber mb-4" />
                   <h3 className="text-2xl font-bold font-header mb-3 text-primary-brown">Happy Animals</h3>
                   <p className="text-primary-brown/70">Ethical and humane treatment</p>
                 </div>
                 <div className="bg-text-light rounded-3xl p-8 border border-primary-brown/10 hover:border-primary-amber/50 transition-all transform hover:-translate-y-2 -mt-12 shadow-lg">
-                  <div className="text-5xl mb-4">♻️</div>
+                  <FaRecycle className="w-10 h-10 text-primary-amber mb-4" />
                   <h3 className="text-2xl font-bold font-header mb-3 text-primary-brown">Sustainable</h3>
                   <p className="text-primary-brown/70">Eco-friendly farming methods</p>
                 </div>
                 <div className="bg-text-light rounded-3xl p-8 border border-primary-brown/10 hover:border-primary-amber/50 transition-all transform hover:-translate-y-2 shadow-lg">
-                  <div className="text-5xl mb-4">🏆</div>
+                  <FaTrophy className="w-10 h-10 text-primary-amber mb-4" />
                   <h3 className="text-2xl font-bold font-header mb-3 text-primary-brown">Award Winning</h3>
                   <p className="text-primary-brown/70">Recognized for excellence</p>
                 </div>
@@ -543,11 +598,13 @@ export default function Home() {
                 key={member.id}
                 className="team-member-card group flex flex-col items-center text-center"
               >
-                {/* Circular Image Container */}
+                {/* Circular Avatar */}
                 <div className="relative mb-6 w-48 h-48">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-amber to-accent-orange p-1">
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-lg">
-                      <div className="text-8xl">{member.image}</div>
+                      <span className="text-5xl font-bold font-header bg-gradient-to-br from-primary-amber to-accent-orange bg-clip-text text-transparent select-none">
+                        {member.name.split(' ').filter((n) => n.length > 0).map((n) => n[0]).join('').slice(0, 2)}
+                      </span>
                     </div>
                   </div>
                   <div className="absolute inset-0 rounded-full border-4 border-primary-amber/20 group-hover:border-primary-amber/50 transition-colors duration-300"></div>
@@ -584,7 +641,7 @@ export default function Home() {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative z-10">
-                  <div className="text-7xl mb-6 transform group-hover:scale-110 transition-transform duration-300">{product.icon}</div>
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 text-primary-amber">{product.icon}</div>
                   <h3 className="text-2xl font-bold font-header mb-4 text-primary-brown group-hover:text-primary-amber transition-colors">{product.name}</h3>
                   <p className="text-primary-brown/70 leading-relaxed mb-6 font-body">{product.description}</p>
                   <button className="text-primary-amber font-semibold group-hover:translate-x-2 transition-transform inline-flex items-center">
@@ -615,7 +672,7 @@ export default function Home() {
                   idx % 3 === 1 ? 'md:mt-12' : ''
                 } ${idx % 3 === 2 ? 'md:-mt-12' : ''}`}
               >
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">{strength.icon}</div>
+                <div className="mb-6 text-primary-amber group-hover:scale-110 transition-transform duration-300">{strength.icon}</div>
                 <h3 className="text-3xl font-bold font-header mb-4 text-primary-brown group-hover:text-primary-amber transition-colors">
                   {strength.title}
                 </h3>
@@ -640,7 +697,7 @@ export default function Home() {
                 key={idx}
                 className="partner-item bg-white rounded-2xl p-8 border border-primary-brown/10 hover:border-primary-amber/50 transition-all flex flex-col items-center justify-center text-center hover:scale-110 duration-300 shadow-md hover:shadow-xl"
               >
-                <div className="text-5xl mb-3">{partner.logo}</div>
+                <div className="mb-3 text-primary-amber">{partner.logo}</div>
                 <p className="text-xs text-primary-brown/70 font-medium font-body">{partner.name}</p>
               </div>
             ))}
@@ -699,7 +756,7 @@ export default function Home() {
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-amber/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
 
                 <div className="relative z-10 flex flex-col justify-between h-full p-8">
-                  <div className="text-7xl group-hover:scale-110 transition-transform duration-300 select-none" aria-hidden="true">
+                  <div className="text-primary-amber group-hover:scale-110 transition-transform duration-300 select-none" aria-hidden="true">
                     {item.icon}
                   </div>
                   <div>
@@ -729,26 +786,32 @@ export default function Home() {
           
           <div className="contact-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-              <div className="text-6xl mb-6">📍</div>
+              <FaMapMarkerAlt className="w-12 h-12 text-primary-amber mb-6" />
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Location</h3>
               <p className="text-primary-brown/70 text-lg leading-relaxed font-body">Sunnyside Farm<br />Karura ka Nyungu, Kiambu County</p>
             </div>
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-              <div className="text-6xl mb-6">📞</div>
+              <FaPhone className="w-12 h-12 text-primary-amber mb-6" />
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Phone</h3>
-              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">0727 918796</p>
+              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">
+                <a href="tel:+254727918796" className="hover:text-primary-amber transition-colors">0727 918796</a>
+              </p>
             </div>
             <div className="contact-card bg-white rounded-3xl p-10 border border-primary-brown/10 hover:border-primary-amber/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-              <div className="text-6xl mb-6">✉️</div>
+              <FaEnvelope className="w-12 h-12 text-primary-amber mb-6" />
               <h3 className="font-bold font-header text-2xl mb-4 text-primary-amber">Email</h3>
-              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">info@sunnysidedairy.com</p>
+              <p className="text-primary-brown/70 text-lg leading-relaxed font-body">
+                <a href="mailto:info@sunnysidedairy.com" className="hover:text-primary-amber transition-colors">info@sunnysidedairy.com</a>
+              </p>
             </div>
           </div>
           
           <div className="text-center">
-            <button className="bg-gradient-to-r from-primary-amber to-accent-orange text-white px-12 py-5 rounded-full font-semibold text-xl hover:shadow-2xl hover:shadow-primary-amber/50 transition-all hover:scale-105">
-              Contact Us Today
-            </button>
+            <a href="mailto:info@sunnysidedairy.com">
+              <button className="bg-gradient-to-r from-primary-amber to-accent-orange text-white px-12 py-5 rounded-full font-semibold text-xl hover:shadow-2xl hover:shadow-primary-amber/50 transition-all hover:scale-105">
+                Contact Us Today
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -766,6 +829,8 @@ export default function Home() {
                   <a
                     key={social.name}
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-text-light/5 hover:bg-gradient-to-br hover:from-primary-amber hover:to-accent-orange text-text-light flex items-center justify-center text-lg font-bold transition-all hover:scale-110 duration-300"
                     aria-label={social.name}
                   >
@@ -791,12 +856,18 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-bold font-header mb-6 text-primary-amber">Get in Touch</h3>
               <ul className="space-y-4 text-text-light/80 font-body">
-                <li className="flex items-start">
-                  <span className="mr-2">📍</span>
+                <li className="flex items-start gap-3">
+                  <FaMapMarkerAlt className="w-5 h-5 text-primary-amber mt-0.5 shrink-0" />
                   <span>Sunnyside Farm<br />Karura ka Nyungu, Kiambu County</span>
                 </li>
-                <li>📞 0727 918796</li>
-                <li>✉️ info@sunnysidedairy.com</li>
+                <li className="flex items-center gap-3">
+                  <FaPhone className="w-5 h-5 text-primary-amber shrink-0" />
+                  <a href="tel:+254727918796" className="hover:text-primary-amber transition-colors">0727 918796</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <FaEnvelope className="w-5 h-5 text-primary-amber shrink-0" />
+                  <a href="mailto:info@sunnysidedairy.com" className="hover:text-primary-amber transition-colors">info@sunnysidedairy.com</a>
+                </li>
               </ul>
             </div>
           </div>
